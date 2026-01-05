@@ -481,6 +481,40 @@ const JAVA_QUERY = `; Java Entity Extraction Queries
         name: (identifier) @name) @item)
 `
 
+const SVELTE_QUERY = `; Svelte Entity Extraction Queries
+; Extracts entities from script blocks and recognizes component structure
+
+; Script tags (module and instance)
+(script_element) @item
+
+; Style tags
+(style_element) @item
+
+; Each blocks
+(each_block) @item
+
+; If blocks  
+(if_block) @item
+
+; Await blocks
+(await_block) @item
+
+; Key blocks
+(key_block) @item
+
+; Snippet blocks (Svelte 5)
+(snippet_block
+    name: (identifier) @name) @item
+
+; Element tags (components start with uppercase)
+(element
+    name: (tag_name) @name) @item
+
+; Self-closing elements
+(self_closing_element  
+    name: (tag_name) @name) @item
+`
+
 /**
  * Query patterns by language - embedded as strings for portability
  */
@@ -491,6 +525,7 @@ export const QUERY_PATTERNS: Record<Language, string> = {
 	rust: RUST_QUERY,
 	go: GO_QUERY,
 	java: JAVA_QUERY,
+	svelte: SVELTE_QUERY,
 }
 
 // =============================================================================

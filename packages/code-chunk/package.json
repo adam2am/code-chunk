@@ -1,10 +1,10 @@
 {
-	"name": "code-chunk",
-	"version": "0.1.12",
-	"description": "AST-aware code chunking for semantic search and RAG",
-	"homepage": "https://github.com/supermemoryai/code-chunk#readme",
+	"name": "code-chunk-fork",
+	"version": "0.2.0",
+	"description": "AST-aware code chunking for semantic search and RAG (with Svelte support)",
+	"homepage": "https://github.com/adam2am/code-chunk#readme",
 	"bugs": {
-		"url": "https://github.com/supermemoryai/code-chunk/issues"
+		"url": "https://github.com/adam2am/code-chunk/issues"
 	},
 	"license": "MIT",
 	"files": [
@@ -60,6 +60,7 @@
 	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"dependencies": {
+		"@tree-sitter-grammars/tree-sitter-svelte": "^1.0.2",
 		"effect": "^3.19.12",
 		"tree-sitter-go": "^0.25.0",
 		"tree-sitter-java": "^0.23.5",

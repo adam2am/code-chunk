@@ -7,10 +7,11 @@ import type { Language, SyntaxNode } from '../types'
 export const COMMENT_NODE_TYPES: Record<Language, readonly string[]> = {
 	typescript: ['comment', 'multiline_comment'],
 	javascript: ['comment', 'multiline_comment'],
-	python: ['comment', 'string'], // Python uses string literals as docstrings
+	python: ['comment', 'string'],
 	rust: ['line_comment', 'block_comment'],
 	go: ['comment'],
 	java: ['line_comment', 'block_comment'],
+	svelte: ['comment'],
 }
 
 /**
@@ -54,6 +55,10 @@ export const isDocComment = (
 		case 'go':
 			// Go: any // comment immediately before a declaration is considered doc
 			return trimmed.startsWith('//')
+
+		case 'svelte':
+			// Svelte: HTML comments
+			return trimmed.startsWith('<!--')
 
 		default:
 			return false

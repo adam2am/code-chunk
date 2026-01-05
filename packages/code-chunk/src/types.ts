@@ -10,6 +10,7 @@ export type Language =
 	| 'rust'
 	| 'go'
 	| 'java'
+	| 'svelte'
 
 /**
  * Types of entities that can be extracted from source code

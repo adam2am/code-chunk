@@ -35,6 +35,7 @@ export const LANGUAGE_EXTENSIONS: Record<string, Language> = {
 	'.rs': 'rust',
 	'.go': 'go',
 	'.java': 'java',
+	'.svelte': 'svelte',
 }
 
 /**
@@ -69,6 +70,8 @@ function getGrammarPath(language: Language): string {
 			return require.resolve('tree-sitter-go/tree-sitter-go.wasm')
 		case 'java':
 			return require.resolve('tree-sitter-java/tree-sitter-java.wasm')
+		case 'svelte':
+			return require.resolve('@tree-sitter-grammars/tree-sitter-svelte/tree-sitter-svelte.wasm')
 	}
 }
 

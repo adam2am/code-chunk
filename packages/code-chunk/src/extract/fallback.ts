@@ -58,6 +58,17 @@ export const ENTITY_NODE_TYPES: Record<Language, readonly string[]> = {
 		'enum_declaration',
 		'import_declaration',
 	],
+	svelte: [
+		'script_element',
+		'style_element',
+		'element',
+		'self_closing_element',
+		'each_block',
+		'if_block',
+		'await_block',
+		'key_block',
+		'snippet_block',
+	],
 }
 
 /**
@@ -105,6 +116,17 @@ export const NODE_TYPE_TO_ENTITY_TYPE: Record<string, EntityType> = {
 
 	// Impl blocks (Rust - treat as class-like)
 	impl_item: 'class',
+
+	// Svelte
+	script_element: 'class',
+	style_element: 'type',
+	element: 'function',
+	self_closing_element: 'function',
+	each_block: 'function',
+	if_block: 'function',
+	await_block: 'function',
+	key_block: 'function',
+	snippet_block: 'function',
 }
 
 /**
